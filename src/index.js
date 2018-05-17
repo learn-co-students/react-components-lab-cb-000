@@ -3,24 +3,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+
 const BUTCHER_PRODUCTS = [
   'Tenderloin',
   'Short ribs',
   'Beef shin',
   'Ribeye'
 ]
+const products = BUTCHER_PRODUCTS.map(product => <li>{product}</li>)
 
 // Define these exported classes
+function Passengers(props){
+  return <li>{props.name}</li>;
+}
 export class OlderCoaster extends React.Component {
 
   // this function should return the JSX we want the DOM to render
   render() {
     return (
       <div className="oldercoaster">
-        Two grannies having the time of their life!
-        Passengers:
-        {Agnes}
-        {Muriel}
+        <p>Two grannies having the time of their life!</p>
+        <p>Passengers:</p>
+        <ul>
+          <Passengers name="Agnes"/>
+          <Passengers name="Muriel"/>
+        </ul>
       </div>
     )
   }
@@ -31,8 +38,8 @@ export class InFrontOfYou extends React.Component {
   render() {
     return (
       <div>
-        You shouldn't look too far.
-        Sometimes, the solution is right in from of you.
+        <p>You shouldn't look too far.</p>
+        <p>Sometimes, the solution is right in front of you.</p>
       </div>
     )
   }
@@ -41,9 +48,11 @@ export class InFrontOfYou extends React.Component {
 export class ButcherShop extends React.Component {
   render() {
     return (
-      <div>
-        Hello! We have the following products for sale today:
-        {BUTCHER_PRODUCTS}
+      <div className="butcher-shop">
+        <p>Hello! We have the following products for sale today:</p>
+        <ul>
+          {products}
+        </ul>
       </div>
     )
   }
@@ -54,7 +63,9 @@ export class App extends React.Component {
   render() {
     return (
       <div id="app">
-
+        <OlderCoaster/>
+        <InFrontOfYou/>
+        <ButcherShop/>
       </div>
     )
   }
