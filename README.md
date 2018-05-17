@@ -77,7 +77,7 @@ What higher order iterator could we use on `BUTCHER_PRODUCTS` to return that kin
 
 ## Look in the Browser!
 
-While its important to get used to reading React code and asserting its functionality directly, (it's just JavaScript, after all!), we should also make sure our React application looks the way we would like in the browser. In order to do this, serve our application by running `npm start`. Thereafter, we are able to inspect our results in the browser at whatever port it announces it's running on.
+While its important to get used to reading React code and asserting its functionality directly, (it's just JavaScript, after all!), we should also make sure our React application looks the way we would like in the browser. You just need to run `npm install` and `npm start` to execute the JSX --> React run-able JavaScript process. Thereafter, we are able to inspect our results in the browser at whatever port it announces it's running on.
 
 ## Resources
 
