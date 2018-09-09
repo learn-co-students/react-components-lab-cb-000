@@ -1,7 +1,7 @@
-// We need to import react so we can make use of its .component class
+// We need to import react so we can make use of its .Component class
 import React from 'react'
-// Altenatively, we could make each class implicitly use the .component class:
-// import React, { Component } from 'react'
+// Altenatively, we could make the alias Component for React.Component and jus use that instead:
+//import React, { Component } from 'react'
 
 import ReactDOM from 'react-dom' // ...and we need to import ReactDOM so we can create and test a virtual DOM with react!
 
