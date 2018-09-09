@@ -1,4 +1,8 @@
-import React, { Component } from 'react' // We need to import react so we can make use of its .component class
+// We need to import react so we can make use of its .component class
+import React from 'react'
+// Altenatively, we could make each class implicitly use the .component class:
+// import React, { Component } from 'react'
+
 import ReactDOM from 'react-dom' // ...and we need to import ReactDOM so we can create and test a virtual DOM with react!
 
 const BUTCHER_PRODUCTS = [
@@ -9,12 +13,10 @@ const BUTCHER_PRODUCTS = [
 ]
 
 // Define these exported classes
-export class OlderCoaster extends Component {
-
-  // this function should return the JSX we want the DOM to render
+export class OlderCoaster extends React.Component {
   render() {
     return (
-      <div class="oldercoaster">
+      <div className="oldercoaster">
         <p>Two grannies having the time of their life!</p>
         <p>Passengers:</p>
         <ul>
@@ -22,47 +24,37 @@ export class OlderCoaster extends Component {
           <li>Muriel</li>
         </ul>
       </div>
-    ) // return ()
-  } // render() {}
-} // class ... {}
+    )
+  }
+}
 
-export class InFrontOfYou extends Component {
+export class InFrontOfYou extends React.Component {
   render() {
     return (
       <div>
-        <p>You shouldnt look too far.</p>
+        <p>You shouldn{`'`}t look too far.</p>
         <p>Sometimes, the solution is right in front of you.</p>
       </div>
     )
   }
 }
-
-export class ButcherShop extends Component {
+export class ButcherShop extends React.Component {
   render() {
+    const products = BUTCHER_PRODUCTS.map((p, i) => (<li key={i}>{p}</li>))
     return (
-      <div class="butcher-shop">
+      <div className="butcher-shop">
         <p>Hello! We have the following products for sale today:</p>
         <ul>
-          <li>Tenderloin</li>
-          <li>Short ribs</li>
-          <li>Beef shin</li>
-          <li>Ribeye</li>
+          { products }
         </ul>
       </div>
     )
   }
 }
-
-var products = BUTCHER_PRODUCTS.map(function(p) { return `<li>${p}</li>`})
-
-export class App extends Component {
-
+export class App extends React.Component {
   render() {
     return (
       <div id="app">
-        <ul>
-          { products }
-        </ul>
         <OlderCoaster />
         <InFrontOfYou />
         <ButcherShop />
@@ -70,5 +62,4 @@ export class App extends Component {
     )
   }
 }
-
 ReactDOM.render(<App />, document.getElementById('root'))
