@@ -1,23 +1,34 @@
-// import React, { Component } from 'react' // We need to import react so we can make use of its .component class
-// import ReactDOM from 'react-dom' // ...and we need to import ReactDOM so we can create and test a virtual DOM with react!
+/*jshint esversion:6*/
+
+
+import React, { Component } from 'react'; // We need to import react so we can make use of its .component class
+import ReactDOM from 'react-dom'; // ...and we need to import ReactDOM so we can create and test a virtual DOM with react!
 
 const BUTCHER_PRODUCTS = [
   'Tenderloin',
   'Short ribs',
   'Beef shin',
   'Ribeye'
-]
+];
 
 // Define these exported classes
 export class OlderCoaster extends Component {
 
   // this function should return the JSX we want the DOM to render
-  // render() {
-  //   return (
-  //     <div>Hello!</div>
-  //   )
-  // }
-  //
+  render() {
+    return (
+      <div>Hello!</div>
+      <div class="oldercoaster">
+        <p>Two grannies having the time of their life!</p>
+        <p>Passengers:</p>
+        <ul>
+          <li>Agnes</li>
+          <li>Muriel</li>
+        </ul>
+      </div>
+    )
+  }
+
 }
 
 export class InFrontOfYou extends Component {
