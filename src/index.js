@@ -8,7 +8,7 @@ const BUTCHER_PRODUCTS = [
   'Ribeye'
 ]
 
-const products = [<li>{BUTCHER_PRODUCTS[0]}</li>, <li>{BUTCHER_PRODUCTS[1]}</li>, <li>{BUTCHER_PRODUCTS[2]}</li>, <li>{BUTCHER_PRODUCTS[3]}</li>]
+//const products = [<li>{BUTCHER_PRODUCTS[0]}</li>, <li>{BUTCHER_PRODUCTS[1]}</li>, <li>{BUTCHER_PRODUCTS[2]}</li>, <li>{BUTCHER_PRODUCTS[3]}</li>]
 
 // Define these exported classes
 export class OlderCoaster extends Component {
@@ -48,7 +48,7 @@ export class ButcherShop extends Component {
       <div className="butcher-shop">
         <p>Hello! We have the following products for sale today:</p>
         <ul>
-          { products }
+            {BUTCHER_PRODUCTS.map(product => <li>{product}</li>)}
         </ul>
       </div>
     )
